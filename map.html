@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 800px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>FSA Volume Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var center_point = {lat: 43.653153, lng: -79.383998};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: center_point
+        });
+        var marker = new google.maps.Marker({
+          position: center_point,
+          map: map
+        });
+                // Define the LatLng coordinates for the polygon's path.
+        var FSA_L4Y_coord = [
+          {lat: 43.622601, lng: -79.602596}, 
+          {lat: 43.597919, lng: -79.567297},
+          {lat: 43.583516, lng: -79.583103},
+          {lat: 43.607727, lng: -79.618762},
+          {lat: 43.622601, lng: -79.602596}
+        ];
+
+        // Construct the polygon.
+        var FSA_L4Y = new google.maps.Polygon({
+          paths: FSA_L4Y_coord,
+          strokeColor: '#FF0000',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#FF0000',
+          fillOpacity: 0.35
+        });
+        FSA_L4Y.setMap(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_f2zmzkYISBNqUpxsapBPMxrkfnd6rZo&callback=initMap">
+    </script>
+  </body>
+</html>
