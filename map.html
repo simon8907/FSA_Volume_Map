@@ -67,6 +67,21 @@
                         fillColor: '#ff0000'
                     });
                 });
+                var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">L4Y</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Volume:</b>, 10,000</p>'+
+      '</div>'+
+      '</div>';
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  FSA_L4Y.addListener('click', function() {
+    infowindow.open(map, FSA_L4Y)
+  });
       }
     </script>
     <script async defer
