@@ -2,10 +2,17 @@
 <html>
   <head>
     <style>
-       #map {
-        height: 800px;
-        width: 100%;
-       }
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 75%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
     </style>
   </head>
   <body>
@@ -41,6 +48,25 @@
           fillOpacity: 0.35
         });
         FSA_L4Y.setMap(map);
+
+        //Mouseover event 
+         google.maps.event.addListener(FSA_L4Y, 'mouseover', function (event) {
+                    // Within the event listener, "this" refers to the polygon which
+                    // received the event.
+                    this.setOptions({
+                        strokeColor: '#ff0000',
+                        strokeWeight: 5,
+                        fillColor: '#ff0000'
+                    });
+                });
+         // STEP 5: Listen for when the mouse stops hovering over the polygon.
+                google.maps.event.addListener(FSA_L4Y, 'mouseout', function (event) {
+                    this.setOptions({
+                        strokeColor: '#ff0000',
+                        strokeWeight: 2,
+                        fillColor: '#ff0000'
+                    });
+                });
       }
     </script>
     <script async defer
