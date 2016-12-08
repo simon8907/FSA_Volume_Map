@@ -50,7 +50,7 @@
         FSA_L4Y.setMap(map);
 
         //Mouseover event 
-         google.maps.event.addListener(FSA_L4Y, 'mouseover', function (event) {
+        google.maps.event.addListener(FSA_L4Y, 'mouseover', function (event) {
                     // Within the event listener, "this" refers to the polygon which
                     // received the event.
                     this.setOptions({
@@ -59,15 +59,23 @@
                         fillColor: '#ff0000'
                     });
                 });
-         //Listen for when the mouse stops hovering the polygon.
-                google.maps.event.addListener(FSA_L4Y, 'mouseout', function (event) {
+        //Listen for when the mouse stops hovering the polygon.
+        google.maps.event.addListener(FSA_L4Y, 'mouseout', function (event) {
                     this.setOptions({
                         strokeColor: '#ff0000',
                         strokeWeight: 2,
                         fillColor: '#ff0000'
                     });
                 });
-      }
+        //Listen for clicking action to the polygon.
+        goole.maps.event.addListener(FSA_L4Y, 'click', showVolume);
+        infoWindow = new google.maps.InfoWindow;
+    }
+
+    function showVolume(event){
+        var vertices = this.getPath();
+        var contentString = '<b>FSA_L4Y</b><br>' + 'Clicked location: <br>' + 'Volume xxx <br>';
+    }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_f2zmzkYISBNqUpxsapBPMxrkfnd6rZo&callback=initMap">
