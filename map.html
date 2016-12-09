@@ -19,9 +19,13 @@
     <h3>FSA Volume Demo</h3>
     <div id="map"></div>
     <script>
+
+    var map;
+    var L4Y_infoWindow;
+
       function initMap() {
         var center_point = {lat: 43.653153, lng: -79.383998};
-        var map = new google.maps.Map(document.getElementById('map'), {
+         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 11,
           center: center_point
         });
@@ -68,13 +72,18 @@
                     });
                 });
         //Listen for clicking action to the polygon.
-        goole.maps.event.addListener(FSA_L4Y, 'click', showVolume);
-        infoWindow = new google.maps.InfoWindow;
+        google.maps.event.addListener(FSA_L4Y, 'click', showVolume);
+        L4Y_infoWindow = new google.maps.InfoWindow;
     }
 
     function showVolume(event){
-        var vertices = this.getPath();
-        var contentString = '<b>FSA_L4Y</b><br>' + 'Clicked location: <br>' + 'Volume xxx <br>';
+        var contentString = '<b>FSA: L4Y</b><br>'+ 'Volume: 300';
+
+        // Replace the info window's content and position.
+        L4Y_infoWindow.setContent(contentString);
+        L4Y_infoWindow.setPosition(event.LatLng);
+
+        L4Y_infoWindow.open(map);
     }
     </script>
     <script async defer
