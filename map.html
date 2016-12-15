@@ -18,21 +18,11 @@
   <body>
     <h3>FSA Volume Demo</h3>
     <div id="map"></div>
+    <div id="info-box"></div>
     <script>
 
     var map;
-    var L4Y_infoWindow;
-
-    function showVolume(event){
-        var FSA = this.Name;
-        var parcel_volume = this.Volume;
-        var pt = event.latLng;
-        var contentString = '<b>FSA: </b>' + FSA + '<br>' + '<b>Volume: </b>' + parcel_volume;
-
-        L4Y_infoWindow.setContent(contentString);
-        L4Y_infoWindow.open(map);
-        L4Y_infoWindow.setPosition(pt);
-    }
+    var polygon_infoWindow;
 
     function initMap() {
         var center_point = {lat: 43.653153, lng: -79.383998};
@@ -45,52 +35,28 @@
           map: map
         });
                 // Define the LatLng coordinates for the polygon's path.
-        var FSA_L4Y_coord = [
-          {lat: 43.622601, lng: -79.602596}, 
-          {lat: 43.597919, lng: -79.567297},
-          {lat: 43.583516, lng: -79.583103},
-          {lat: 43.607727, lng: -79.618762},
-          {lat: 43.622601, lng: -79.602596}
-        ];
-
-        // Construct the polygon.
-        var FSA_L4Y = new google.maps.Polygon({
-          paths: FSA_L4Y_coord,
-          strokeColor: '#FF0000',
-          strokeOpacity: 0.8,
-          strokeWeight: 2,
-          fillColor: '#FF0000',
-          fillOpacity: 0.35,
-          Name: "L4Y",
-          Volume: 400
-        });
-        FSA_L4Y.setMap(map);
-
-        //Mouseover event 
-        google.maps.event.addListener(FSA_L4Y, 'mouseover', function (event) {
-                    // Within the event listener, "this" refers to the polygon which
-                    // received the event.
-                    this.setOptions({
-                        strokeColor: '#ff0000',
-                        strokeWeight: 5,
-                        fillColor: '#ff0000'
-                    });
-                });
-        //Listen for when the mouse stops hovering the polygon.
-        google.maps.event.addListener(FSA_L4Y, 'mouseout', function (event) {
-                    this.setOptions({
-                        strokeColor: '#ff0000',
-                        strokeWeight: 2,
-                        fillColor: '#ff0000'
-                    });
-                });
-        //Listen for clicking action to the polygon.
-        google.maps.event.addListener(FSA_L4Y, 'click', showVolume);
-        L4Y_infoWindow = new google.maps.InfoWindow;
+        polygon_infoWindow= new google.maps.InfoWindow;
 
         //Loading Geojson data.
         map.data.loadGeoJson('https://cdn.rawgit.com/simon8907/FSA_Data/master/Canadian_FSA.geojson');
-
+        // Set mouseover event for each feature.
+        map.data.addListener('mouseover', function(event) {
+          var polygon_content_String = 'FSA: '+
+              event.feature.getProperty('CFSAUID') +' | ' + 'Volume: '
+          document.getElementById('info-box').textContent = polygon_content_String;
+          map.data.revertStyle();
+          map.data.overrideStyle(event.feature, {strokeWeight: 5});
+        });
+        //Set click event for each feature. Open the infoWindow to show the clicked
+        //FSA boundary and the respective volume.
+        map.data.addListener('click', function(event){
+          var FSA = event.feature.getProperty('CFSAUID');
+          var parcel_volume = 300;
+          var infowWindow_contentString = '<b>FSA: </b>' + FSA + '<br>' + '<b>Volume: </b>' + parcel_volume;
+          polygon_infoWindow.setContent(infowWindow_contentString);
+          polygon_infoWindow.open(map);
+          polygon_infoWindow.setPosition(event.latLng);
+        });
 
     }
     </script>
