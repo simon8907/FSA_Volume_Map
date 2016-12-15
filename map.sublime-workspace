@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"info",
+				"L4Y_infoWindow"
+			],
+			[
 				"FSA",
 				"FSA_L4Y"
 			]
@@ -15,7 +19,7 @@
 			"file": "map.html",
 			"settings":
 			{
-				"buffer_size": 2775,
+				"buffer_size": 2941,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -53,7 +57,7 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Cecilia Yan/Documents/Canada Post Website/FSA_Volume_Map"
+		"/E/Users/XimengW/Documents/FSA_Volume_Map"
 	],
 	"file_history":
 	[
@@ -64,7 +68,7 @@
 	],
 	"find":
 	{
-		"height": 80.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -105,26 +109,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2775,
+						"buffer_size": 2941,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2355,
-								2355
+								669,
+								669
 							]
 						],
 						"settings":
 						{
 							"spell_check": true,
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2223.0,
+						"translation.y": 456.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -135,7 +139,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 47.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -172,7 +176,7 @@
 	"project": "map.sublime-project",
 	"replace":
 	{
-		"height": 90.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -210,7 +214,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 375.0,
+	"side_bar_width": 118.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

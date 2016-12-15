@@ -85,8 +85,13 @@
                     });
                 });
         //Listen for clicking action to the polygon.
-        FSA_L4Y.addListener('click', showVolume);
+        google.maps.event.addListener(FSA_L4Y, 'click', showVolume);
         L4Y_infoWindow = new google.maps.InfoWindow;
+
+        //Loading Geojson data.
+        map.data.loadGeoJson('https://cdn.rawgit.com/simon8907/FSA_Data/master/Canadian_FSA.geojson');
+
+
     }
     </script>
     <script async defer
