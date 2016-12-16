@@ -38,7 +38,7 @@
         polygon_infoWindow= new google.maps.InfoWindow;
 
         //Loading Geojson data.
-        map.data.loadGeoJson('https://cdn.rawgit.com/simon8907/FSA_Data/master/Canadian_FSA.geojson');
+        map.data.loadGeoJson('https://cdn.rawgit.com/simon8907/FSA_Data/master/Ontario_FSAs.geojson');
         // Set mouseover event for each feature.
         map.data.addListener('mouseover', function(event) {
           var polygon_content_String = 'FSA: '+
