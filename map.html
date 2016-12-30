@@ -35,7 +35,7 @@
           map: map
         });
                 // Define the LatLng coordinates for the polygon's path.
-        polygon_infoWindow= new google.maps.InfoWindow;
+        polygon_infoWindow = new google.maps.InfoWindow;
 
         //Loading Geojson data.
         map.data.loadGeoJson('https://cdn.rawgit.com/simon8907/FSA_Data/master/Ontario_FSAs.geojson');
@@ -47,6 +47,7 @@
           map.data.revertStyle();
           map.data.overrideStyle(event.feature, {strokeWeight: 5});
         });
+        
         //Set click event for each feature. Open the infoWindow to show the clicked
         //FSA boundary and the respective volume.
         map.data.addListener('click', function(event){
