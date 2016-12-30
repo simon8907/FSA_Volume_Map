@@ -19,7 +19,7 @@
 			"file": "map.html",
 			"settings":
 			{
-				"buffer_size": 2941,
+				"buffer_size": 2312,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -61,6 +61,12 @@
 	],
 	"file_history":
 	[
+		"/E/Users/XimengW/Documents/FSA_Volume_Map/map.sublime-workspace",
+		"/E/Users/XimengW/Documents/PHP_Tutorial/hello.php",
+		"/C/xampp/apache/conf/httpd.conf",
+		"/C/php/php.ini",
+		"/E/Users/XimengW/Documents/FSA_Volume_Map_FSA_Data/Canadian_FSA.geojson",
+		"/E/Users/XimengW/Documents/FSA_Volume_Map_FSA_Data/Ontario_FSA.geojson",
 		"/C/Users/Cecilia Yan/Documents/Canada Post Website/FSA_Volume_Map/map.sublime-project",
 		"/C/Users/Cecilia Yan/Documents/Canada Post Website/FSA_Volume_Map/README.md",
 		"/C/Users/Cecilia Yan/Documents/Canada Post Website/index.html",
@@ -72,7 +78,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 		]
@@ -109,15 +115,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2941,
+						"buffer_size": 2312,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								669,
-								669
+								732,
+								732
 							]
 						],
 						"settings":
@@ -128,7 +134,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 456.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -214,7 +220,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 118.0,
+	"side_bar_width": 283.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
