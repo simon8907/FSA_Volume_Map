@@ -41,8 +41,9 @@
         map.data.loadGeoJson('https://cdn.rawgit.com/simon8907/FSA_Data/master/Ontario_FSAs.geojson');
         // Set mouseover event for each feature.
         map.data.addListener('mouseover', function(event) {
+          var parcel_volume = 500;
           var polygon_content_String = 'FSA: '+
-              event.feature.getProperty('CFSAUID') +' | ' + 'Volume: '
+              event.feature.getProperty('CFSAUID') +' | ' + 'Volume: ' + parcel_volume;
           document.getElementById('info-box').textContent = polygon_content_String;
           map.data.revertStyle();
           map.data.overrideStyle(event.feature, {strokeWeight: 5});
